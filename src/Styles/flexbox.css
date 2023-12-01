@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ 
+}
+
+.home {
+    background: url('/src/images/med.jpeg') center/cover no-repeat;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.homeh {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between ;
+    width:100%;
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    max-width: var(--max-width);
+    margin:auto;
+    padding:1.5rem 1rem;
+     
+
+    
+}
+
+.logo img {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+}
+.homen .checkbox{
+    display: none;
+
+}
+.homen input{
+    display:none;
+
+}
+.homen .checkbox i{
+    font-size:2rem;
+    color:black;
+    cursor:pointer;
+
+
+}
+
+.homen ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    transition:left 0.3s;
+    
+    
+}
+
+.homen a {
+    padding: 0.5rem 0rem;
+    border:2px solid transparent; 
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: 0.3s;
+
+}
+
+.homen a:hover {
+    color: grey;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+}
+
+.homem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+   
+}
+
+.homem a {
+    background-color: bisque;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 100px;
+    display: flex;
+    box-shadow: none;
+}
+
+.homem a:hover {
+    letter-spacing: 0.25em;
+}
+
+#quote {
+    margin-top: 20px;
+    text-align: justify;
+    padding-left: 200px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding: 20px;
+    background-color: rgb(191, 122, 72);
+}
+
+.social-icons a {
+    margin: 10px 20px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+/*about page*/
+
+.body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.header {
+    text-align: center;
+    padding: 10px;
+    background-color:rgb(191, 122, 72);
+}
+
+.main-about {
+    display: flex;
+    height:95%;
+    background-color: bisque;
+    
+ 
+}
+
+#about {
+    flex: 1;
+    padding-left: 10px;
+      
+}
+#about h4,ul{
+    padding-left:20px;
+}
+
+#image {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+   
+    
+}
+
+#image img {
+    width: 100%;
+    height: 100%;
+    
+    
+    
+}
+
+/*Hobbies page*/
+
+.main-hobbies{
+    flex:1;
+    background-color: bisque;
+    padding:20px;
+    
+}
+.main-hobbies section{
+    padding:20px;
+}
+.highlight{
+    color:rgb(207, 98, 20);
+    font-size: 20px;
+}
+.main-hobbies img{
+    width: 100%;
+    max-width:400px;
+    height:auto;
+    margin-left: 0px;
+    
+    
+}
+/*portfolio page*/
+
+.main-portfolio{
+    flex:1;
+    background-color: bisque;
+    padding:20px;
+}
+.main-portfolio div{
+    padding:20px;
+    
+}
+.main-portfolio iframe{
+    width: 100%;
+    max-width:400px;
+    height:300px;
+    margin-left: 0px;
+}
+.caption{
+    font-size:larger;
+    color:rgb(74, 34, 6);
+}
+/*Contacts page*/
+.main-contact {
+    background-color: bisque;
+    padding: 90px 100px;
+    height: 100vh;
+    
+}
+
+.main-contact address p {
+    margin-bottom: 80px;
+    color:rgb(65, 32, 7);
+}
+.main-contact a{
+    color:rgb(125, 34, 125);
+}
+
+
+@media screen and (max-width: 600px) {
+    .homeh {
+        padding: 10px;
+    }
+
+    .homen .checkbox {
+        display:block;
+    }
+
+    .homen ul {
+        
+        position: absolute;
+        width: 100%;
+        height:calc(100vh-85px); 
+        left: -100%;
+        top: 85px;
+        background-color: rgb(191, 122, 72);
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+        
+    }
+
+    .homen #check:checked ~ ul {
+        left: 0;
+        
+    }
+    .homen a{
+        font-size: 1.25rem;
+    }
+
+    .homem {
+        padding: 10px;
+    }
+
+    #quote {
+        padding-left: 70px;
+    }
+    .main-about {
+        flex-direction: column;
+    }
+
+    #about {
+        order: 1;
+    }
+
+    #image {
+        order: 2;
+        height: 10%;
+    }
+    .main-hobbies img {
+        max-width: 100%; 
+        margin-left: 0; 
+    }
+    .main-portfolio{
+        padding: 10px;
+
+    }
+    .main-portfolio div {
+        padding: 10px; 
+    }
+    .main-portfolio iframe {
+        max-width: 100%; 
+        height: auto; 
+        margin-left: 0; 
+    }
+    .main-contact {
+        padding: 10px;
+    }
+}
