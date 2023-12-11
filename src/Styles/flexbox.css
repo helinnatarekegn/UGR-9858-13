@@ -9,8 +9,8 @@
 }
 
 .home {
-    background: url('/src/images/med.jpeg') center/cover no-repeat;
-    background-position: center;
+    background: url('/UGR-9858-13/src/images/med.jpeg') center/cover no-repeat;
+    background-position:fixed;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -114,7 +114,7 @@
 
 #quote {
     margin-top: 20px;
-    text-align: justify;
+    text-align: center;
     padding-left: 200px;
 }
 
@@ -144,6 +144,7 @@ footer {
     flex-direction: column;
     height: 100vh;
     margin: 0;
+    background-color: bisque;
 }
 
 .header {
@@ -153,36 +154,23 @@ footer {
 }
 
 .main-about {
-    display: flex;
-    height:95%;
+    display: grid;
     background-color: bisque;
-    
- 
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto; 
+    padding: 30px; 
 }
 
 #about {
-    flex: 1;
-    padding-left: 10px;
-      
-}
-#about h4,ul{
-    padding-left:20px;
+    grid-column: 1; 
 }
 
 #image {
-    flex: 1;
-    display: flex;
-    overflow: hidden;
-   
-    
-}
-
-#image img {
+    grid-column: 2; 
     width: 100%;
     height: 100%;
-    
-    
-    
 }
 
 /*Hobbies page*/
@@ -211,6 +199,7 @@ footer {
 /*portfolio page*/
 
 .main-portfolio{
+    display:flex;
     flex:1;
     background-color: bisque;
     padding:20px;
@@ -246,9 +235,16 @@ footer {
 }
 
 
-@media screen and (max-width: 600px) {
+/*Responsiveness for mobile portrait*/
+@media screen and (max-width: 600px)  {
     .homeh {
         padding: 10px;
+    }
+    .logo img{
+        width:150px;
+        height:150px;
+
+
     }
 
     .homen .checkbox {
@@ -278,29 +274,32 @@ footer {
     }
 
     .homem {
-        padding: 10px;
+        padding-top: 70px;
+    }
+    .homem a{
+        font-size: 1rem;
+
     }
 
     #quote {
-        padding-left: 70px;
+        padding-left: 50px;
     }
     .main-about {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 
-    #about {
-        order: 1;
+    #about, #image {
+        grid-column: 1; /* Both sections take full width on small screens */
     }
 
-    #image {
-        order: 2;
-        height: 10%;
-    }
+        
+    
     .main-hobbies img {
         max-width: 100%; 
         margin-left: 0; 
     }
     .main-portfolio{
+        display:block;
         padding: 10px;
 
     }
@@ -308,11 +307,107 @@ footer {
         padding: 10px; 
     }
     .main-portfolio iframe {
-        max-width: 100%; 
+        width:100%;
         height: auto; 
         margin-left: 0; 
     }
     .main-contact {
         padding: 10px;
     }
+}
+/*Responsiveness for mobile landscape*/
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+    .logo img{
+        width:150px;
+        height:150px;
+
+    }
+    #about{
+        font-size: 0.5rem;
+    }
+    
+    
+    .main-portfolio div{
+        
+        margin-top: -10px;
+        
+    }
+    .caption{
+        font-size:1rem;
+    }
+    .main-portfolio iframe{
+        width:250px;
+        height:200px;
+    }
+    .main-contact {
+        padding: 10px;
+    }
+
+}
+   
+
+
+/*Responsiveness for tablet*/
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+
+    .homeh a{
+       font-size:1rem;
+       
+    }
+    .homem {
+        font-size:0.75rem;
+    }
+    .homem a{
+        font-size: 1rem;
+
+    }
+    #quote{
+        padding-right:70px;
+    }
+    #about{
+        font-size: 1rem;
+    }
+    
+    .main-hobbies{
+        display:grid;
+        
+    }
+    
+    .main-hobbies {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(2, 1fr);    
+        gap: 10px; 
+    }
+      
+    .main-hobbies figure {
+        
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #ccc;
+      }
+    .main-portfolio{
+        padding-top:130px;
+        
+    }
+
+}
+/*Responsiveness for desktop*/
+@media only screen and (min-width: 901px) {
+
+    #quote{
+        padding-right:70px;
+    }
+    #about{
+        font-size: 1.25rem;
+    }
+    
+    .main-hobbies{
+        display: flex;
+    }
+    .main-portfolio{
+        padding:100px;
+        
+    }
+
 }
